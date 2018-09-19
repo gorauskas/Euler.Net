@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Euler.Tests</RootNamespace>
+
+    <Authors>Jonas Gorauskas</Authors>
   </PropertyGroup>
 
   <ItemGroup>
