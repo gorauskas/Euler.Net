@@ -2,9 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Numerics;
 
 namespace Euler {
     public static class Extensions {
+
+        #region IsEven
+
+        public static bool IsEven(this int n) {
+            return n % 2 == 0;
+        }
+
+        public static bool IsEven(this long n) {
+            return n % 2 == 0;
+        }
+
+        public static bool IsEven(this BigInteger n) {
+            return n % 2 == 0;
+        }
+
+        #endregion
 
         #region To
         public static IEnumerable<int> ToMax(this int i) {
@@ -52,6 +69,10 @@ namespace Euler {
 
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
+        }
+
+        public static IEnumerable<int> End(this IEnumerable<int> ei, int endNum) {
+            return ei.TakeWhile(x => x <= endNum);
         }
 
     }
