@@ -67,6 +67,38 @@ namespace Euler {
         }
         #endregion
 
+        #region Pow
+
+        public static double Pow(this double n, double power) {
+            return Math.Pow(n, power);
+        }
+
+        public static int Pow(this int n, int power) {
+            return (int)Math.Pow(n, power);
+        }
+
+        public static long Pow(this long n, long power) {
+            return (long)Math.Pow(n, power);
+        }
+
+        #endregion
+
+        #region Sqr
+
+        public static double Sqr(this double n) {
+            return Pow(n, 2);
+        }
+
+        public static int Sqr(this int n) {
+            return (int)Sqr((double)n);
+        }
+
+        public static long Sqr(this long n) {
+            return (long)(n * n);
+        }
+
+        #endregion
+
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
         }
