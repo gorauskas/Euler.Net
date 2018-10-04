@@ -23,6 +23,52 @@ namespace Euler {
 
         #endregion
 
+        #region IsPrime
+
+        public static bool IsPrime(this int n) {
+            if ((n & 1) == 0)
+                if (n == 2)
+                    return true;
+                else
+                    return false;
+
+            for (int k = 3; (k * k) <= n; k += 2)
+                if ((n % k) == 0)
+                    return false;
+
+            return n != 1;
+        }
+
+        public static bool IsPrime(this long n) {
+            if ((n & 1) == 0)
+                if (n == 2)
+                    return true;
+                else
+                    return false;
+
+            for (long k = 3; (k * k) <= n; k += 2)
+                if ((n % k) == 0)
+                    return false;
+
+            return n != 1;
+        }
+
+        public static bool IsPrime(this BigInteger n) {
+            if ((n & 1) == 0)
+                if (n == 2)
+                    return true;
+                else
+                    return false;
+
+            for (BigInteger k = 3; (k * k) <= n; k += 2)
+                if ((n % k) == 0)
+                    return false;
+
+            return n != 1;
+        }
+
+        #endregion
+
         #region To
         public static IEnumerable<int> ToMax(this int i) {
             return i.To(int.MaxValue);
