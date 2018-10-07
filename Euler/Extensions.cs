@@ -69,6 +69,31 @@ namespace Euler {
 
         #endregion
 
+        #region ToInt
+
+        /// <summary>
+        /// All objects in the .NET Fx have a ToString method, but there is one type that
+        /// deserves to have a ToInt method and that's string itself.
+        /// </summary>
+        /// <param name="str">The string to convert to int</param>
+        /// <returns>an Int32 representation of the string</returns>
+        /// <remarks>Throws an error if the string cannot be parsed into a number</remarks>
+        public static int ToInt(this string str) {
+            return Int32.Parse(str);
+        }
+
+        /// <summary>
+        /// Also deserving are char types ... All objects in the .NET Fx have a ToString method, 
+        /// but there is one type that deserves to have a ToInt method and that's char.
+        /// </summary>
+        /// <param name="c">The char to convert to int</param>
+        /// <returns>an Int32 representation of the char</returns>
+        public static int ToInt(this char c) {
+            return ToInt(new string(c, 1));
+        }
+
+        #endregion
+
         #region To
         public static IEnumerable<int> ToMax(this int i) {
             return i.To(int.MaxValue);
