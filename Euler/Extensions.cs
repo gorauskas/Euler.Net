@@ -170,6 +170,25 @@ namespace Euler {
 
         #endregion
 
+        /// <summary>
+        /// Extension method to pretty-print a list like it is represented in the python language
+        ///      [ 1, 2, 3, 4, 5 ]
+        /// </summary>
+        /// <typeparam name="T">the type of list items</typeparam>
+        /// <param name="list">the list</param>
+        /// <returns>string</returns>
+        public static string ListToString<T>(this List<T> list) {
+            StringBuilder sb = new StringBuilder("[");
+
+            foreach (var item in list) {
+                sb.Append(item.ToString());
+                sb.Append(", ");
+            }
+
+            sb.Append("]");
+            return sb.ToString().Replace(", ]", "]");
+        }
+
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
         }
