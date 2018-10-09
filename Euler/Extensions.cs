@@ -170,6 +170,10 @@ namespace Euler {
 
         #endregion
 
+        public static int Product(this IEnumerable<int> nums) {
+            return nums.Aggregate(1, (accum, x) => accum * x);
+        }
+
         /// <summary>
         /// Extension method to pretty-print a list like it is represented in the python language
         ///      [ 1, 2, 3, 4, 5 ]
