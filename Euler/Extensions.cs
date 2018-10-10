@@ -94,6 +94,32 @@ namespace Euler {
 
         #endregion
 
+        #region ToLong
+
+        /// <summary>
+        /// While we are writing a ToInt method for string we might as well
+        /// also write a ToLong method
+        /// </summary>
+        /// <param name="str">The string to convert to long</param>
+        /// <returns>an Int64 representation of the string</returns>
+        public static long ToLong(this string str) {
+            return Int64.Parse(str);
+        }
+
+        public static long ToLong(this char c) {
+            return Int64.Parse(c.ToString());
+        }
+
+        public static long ToLong(this IEnumerable<int> l) {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in l)
+                sb.Append(item.ToString());
+
+            return Int64.Parse(sb.ToString());
+        }
+
+        #endregion
+
         #region To
         public static IEnumerable<int> ToMax(this int i) {
             return i.To(int.MaxValue);
@@ -172,6 +198,10 @@ namespace Euler {
 
         public static int Product(this IEnumerable<int> nums) {
             return nums.Aggregate(1, (accum, x) => accum * x);
+        }
+
+        public static long Product(this IEnumerable<long> nums) {
+            return nums.Aggregate((long)1, (accum, x) => accum * x);
         }
 
         /// <summary>
