@@ -196,12 +196,32 @@ namespace Euler {
 
         #endregion
 
+        #region Sqrt
+
+        public static int Sqrt(this int i) {
+            return (int)Math.Sqrt(i);
+        }
+
+        public static double Sqrt(this double d) {
+            return Math.Sqrt(d);
+        }
+
+        #endregion
+
         public static int Product(this IEnumerable<int> nums) {
             return nums.Aggregate(1, (accum, x) => accum * x);
         }
 
         public static long Product(this IEnumerable<long> nums) {
             return nums.Aggregate((long)1, (accum, x) => accum * x);
+        }
+
+        public static int NumberOfDivisors(this int i) {
+            if (i == 1) {
+                return 1;
+            }
+
+            return 1.To(i.Sqrt()).Count(x => i.IsMultipleOf(x)) * 2;
         }
 
         /// <summary>
