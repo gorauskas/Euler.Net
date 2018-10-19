@@ -120,6 +120,14 @@ namespace Euler {
 
         #endregion
 
+        #region ToBigInteger
+
+        public static BigInteger ToBigInteger(this string str) {
+            return BigInteger.Parse(str);
+        }
+
+        #endregion
+
         #region To
         public static IEnumerable<int> ToMax(this int i) {
             return i.To(int.MaxValue);
@@ -138,6 +146,22 @@ namespace Euler {
             for (var x = i; x <= to; x++)
                 yield return x;
         }
+        #endregion
+
+        #region Sum
+
+        public static uint Sum(this IEnumerable<byte> bytes) {
+            uint accum = 0;
+            bytes.ForEach(b => accum = accum + b);
+            return accum;
+        }
+
+        public static BigInteger Sum(this IEnumerable<BigInteger> n) {
+            BigInteger sum = 0;
+            n.ForEach(bi => sum = sum + bi);
+            return sum;
+        }
+
         #endregion
 
         #region IsMultipleOf
@@ -207,6 +231,12 @@ namespace Euler {
         }
 
         #endregion
+
+        public static void ForEach<T>(this IEnumerable<T> seq, Action<T> action) {
+            foreach (var item in seq) {
+                action(item);
+            }
+        }
 
         public static int Product(this IEnumerable<int> nums) {
             return nums.Aggregate(1, (accum, x) => accum * x);
