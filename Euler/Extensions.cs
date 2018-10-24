@@ -148,6 +148,24 @@ namespace Euler {
         }
         #endregion
 
+        #region Factorial
+
+        public static BigInteger BigFactorial(this int i) {
+            if (i == 1)
+                return i;
+
+            return i * BigFactorial(i - 1);
+        }
+
+        public static int Factorial(this int i) {
+            if (i == 0 || i == 1)
+                return 1;
+
+            return i * Factorial(i - 1);
+        }
+
+        #endregion
+
         #region Sum
 
         public static uint Sum(this IEnumerable<byte> bytes) {
