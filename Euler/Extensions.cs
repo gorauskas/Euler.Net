@@ -299,5 +299,9 @@ namespace Euler {
             return ei.TakeWhile(x => x <= endNum);
         }
 
+        public static BigInteger Choose(this int x, int y) {
+            return x.BigFactorial() / ((x - y).BigFactorial() * y.BigFactorial());
+        }
+
     }
 }
