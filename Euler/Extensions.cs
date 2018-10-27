@@ -128,6 +128,19 @@ namespace Euler {
 
         #endregion
 
+        #region ToByte
+
+        /// <summary>
+        /// We should also be able to parse a char into a byte
+        /// </summary>
+        /// <param name="c">The char to convert to byte</param>
+        /// <returns>a byte representation of the char</returns>
+        public static byte ToByte(this char c) {
+            return byte.Parse(new string(new[] { c }));
+        }
+
+        #endregion
+
         #region To
         public static IEnumerable<int> ToMax(this int i) {
             return i.To(int.MaxValue);
@@ -249,6 +262,10 @@ namespace Euler {
         }
 
         #endregion
+
+        public static IEnumerable<byte> ToByteSequence(this IEnumerable<char> char_array) {
+            return char_array.Select(c => c.ToByte());
+        }
 
         public static void ForEach<T>(this IEnumerable<T> seq, Action<T> action) {
             foreach (var item in seq) {
