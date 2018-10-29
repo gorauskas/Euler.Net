@@ -5,8 +5,8 @@ Solutions to the Project Euler problems written in C#.
 Clone this repo and then run the following from the command line:
 
     cd Euler.Net\Euler
-    dotnet publish -c Release -r win10-x64
-    bin\Release\netcoreapp2.1\win10-x64\Euler.exe -v -p <problem number>
+    dotnet publish -c Release 
+    dotnet .\bin\Debug\netcoreapp2.1\euler.dll -v -p <problem number>
 
 ## Usage
 

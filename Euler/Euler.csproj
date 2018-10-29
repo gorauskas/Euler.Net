@@ -8,12 +8,14 @@
     <Description>Solutions to the Project Euler problems implemented in C#.</Description>
     <Copyright>(c) 2018 Jonas Gorauskas</Copyright>
     <PackageProjectUrl>https://github.com/gorauskas/Euler.Net</PackageProjectUrl>
-    <RepositoryUrl />
+    <RepositoryUrl>https://github.com/gorauskas/Euler.Net</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <AssemblyVersion>0.0.1.0</AssemblyVersion>
     <FileVersion>0.0.1.0</FileVersion>
     <SignAssembly>false</SignAssembly>
     <DelaySign>false</DelaySign>
+    <Version>0.0.1.0</Version>
+    <AssemblyName>euler</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
