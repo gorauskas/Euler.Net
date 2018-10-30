@@ -267,6 +267,10 @@ namespace Euler {
             return char_array.Select(c => c.ToByte());
         }
 
+        public static string JoinAsString<T>(this IEnumerable<T> objs, string separator = "") {
+            return string.Join(separator, objs);
+        }
+
         public static void ForEach<T>(this IEnumerable<T> seq, Action<T> action) {
             foreach (var item in seq) {
                 action(item);
