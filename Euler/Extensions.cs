@@ -324,5 +324,23 @@ namespace Euler {
             return x.BigFactorial() / ((x - y).BigFactorial() * y.BigFactorial());
         }
 
+        /// <summary>
+        /// Where a Fold function takes a sequence and reduces it to a single element,
+        /// the Unfold function takes a single element and generates a sequence.
+        /// </summary>
+        /// <typeparam name="T">The type</typeparam>
+        /// <param name="seed">The seed value. The sequence is generated from this value.</param>
+        /// <param name="generator">A function that contains the logic to generate the next item in the sequence</param>
+        /// <returns>An Enumerable of T </returns>
+        public static IEnumerable<T> Unfold<T>(this T seed, Func<T, T> generator) {
+            yield return seed;
+
+            T current = seed;
+
+            while (true) {
+                current = generator(current);
+                yield return current;
+            }
+        }
     }
 }
