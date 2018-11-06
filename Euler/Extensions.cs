@@ -293,6 +293,22 @@ namespace Euler {
             return 1.To(i.Sqrt()).Count(x => i.IsMultipleOf(x)) * 2;
         }
 
+        public static int SumOfDivisors(this int i) {
+            var sum = 1;
+
+            2.To(i.Sqrt())
+                .ForEach(x => {
+                    if (i % x == 0) {
+                        sum += x;
+                        if (x != i / x) {
+                            sum += i / x;
+                        }
+                    }
+                });
+
+            return sum;
+        }
+
         /// <summary>
         /// Extension method to pretty-print a list like it is represented in the python language
         ///      [ 1, 2, 3, 4, 5 ]
