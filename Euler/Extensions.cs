@@ -263,6 +263,10 @@ namespace Euler {
 
         #endregion
 
+        public static bool In<T>(this T t, ISet<T> set) {
+            return set.Contains(t);
+        }
+
         public static IEnumerable<byte> ToByteSequence(this IEnumerable<char> char_array) {
             return char_array.Select(c => c.ToByte());
         }
