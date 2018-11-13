@@ -275,6 +275,15 @@ namespace Euler {
             return string.Join(separator, objs);
         }
 
+        public static IEnumerable<T[]> Permute<T>(this T[] xs, params T[] pre) {
+            if (xs.Length == 0) yield return pre;
+            for (int i = 0; i < xs.Length; i++) {
+                foreach (T[] y in Permute(xs.Take(i).Union(xs.Skip(i + 1)).ToArray(), pre.Union(new[] { xs[i] }).ToArray())) {
+                    yield return y;
+                }
+            }
+        }
+
         public static void ForEach<T>(this IEnumerable<T> seq, Action<T> action) {
             foreach (var item in seq) {
                 action(item);
