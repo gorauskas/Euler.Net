@@ -23,6 +23,22 @@ namespace Euler {
 
         #endregion
 
+        #region IsPanDigital
+
+        public static bool IsPanDigital(this int i, int len = 9) {
+            return "1234567890".Take(len).Except(i.ToString().ToList()).Count() == 0;
+        }
+
+        public static bool IsPanDigital(this long l, int len = 9) {
+            return "1234567890".Take(len).Except(l.ToString().ToList()).Count() == 0;
+        }
+
+        public static bool IsPanDigital(this BigInteger bi, int len = 9) {
+            string s = bi.ToString();
+            return s.Length == len && "123456789".Strip(s).Length == 0;
+        }
+        #endregion
+
         #region IsPrime
 
         public static bool IsPrime(this int n) {
@@ -343,6 +359,24 @@ namespace Euler {
 
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
+        }
+
+        /// <summary>
+        /// Strip the specified `args` from the specified `str`. When `args` is null it 
+        /// defaults to all whitespace.
+        /// </summary>
+        /// <param name='str'>
+        /// String: the string to strip
+        /// </param>
+        /// <param name='args'>
+        /// Arguments: a set of characters to strip from str. Expects a string.
+        /// </param>
+        public static string Strip(this string str, string args = null) {
+            if (args == null) {
+                return str.Where(c => !char.IsWhiteSpace(c)).JoinAsString();
+            } else {
+                return str.Where(c => !args.Contains(c)).JoinAsString();
+            }
         }
 
         public static IEnumerable<int> End(this IEnumerable<int> ei, int endNum) {
