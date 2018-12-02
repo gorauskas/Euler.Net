@@ -357,6 +357,28 @@ namespace Euler {
             return sb.ToString().Replace(", ]", "]");
         }
 
+        /// <summary>
+        /// Concats the list as string.
+        /// </summary>
+        /// <returns>
+        /// The list as string.
+        /// </returns>
+        /// <param name='list'>
+        /// List.
+        /// </param>
+        /// <typeparam name='T'>
+        /// The 1st type parameter.
+        /// </typeparam>
+        public static string ConcatListAsString<T>(this List<T> list) {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var item in list) {
+                sb.Append(item.ToString());
+            }
+
+            return sb.ToString();
+        }
+
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
         }
