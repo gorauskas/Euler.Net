@@ -28,7 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Artifacts\words.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Artifacts\names.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Artifacts\words.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
