@@ -2,8 +2,7 @@ language: csharp
 solution: Euler.Net.sln
 mono: none
 dotnet: 2.1
-install:
-  - nuget restore Euler.Net.sln
 script:
-  - cd Euler.Net/EulerTest
-  - dotnet test
+ - dotnet restore
+ - cd Euler.Net/EulerTest
+ - dotnet test
