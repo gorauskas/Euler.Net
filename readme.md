@@ -1,5 +1,7 @@
 # Euler.Net
 
+[![Build Status](https://travis-ci.org/gorauskas/Euler.Net.svg?branch=master)](https://travis-ci.org/gorauskas/Euler.Net)
+
 Solutions to the Project Euler problems written in C#.
 
 Clone this repo and then run the following from the command line:
