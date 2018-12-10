@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EulerTest", "EulerTest\Eule
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B543F815-C91A-40DE-9842-3F591EC21CD2}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		readme.md = readme.md
 	EndProjectSection
 EndProject
