@@ -379,6 +379,10 @@ namespace Euler {
             return sb.ToString();
         }
 
+        public static long ConcatListAsNumber<T>(this List<T> list) {
+            return list.ConcatListAsString().ToLong();
+        }
+
         public static string FormatWith(this string str, params object[] args) {
             return string.Format(str, args);
         }
