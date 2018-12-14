@@ -6,7 +6,7 @@ namespace Euler.Tests {
     public class Euler37Test {
 
         [Test]
-        public void TestSolve() {
+        public void TestSolve037() {
 
             Euler37 e = new Euler37();
             Assert.AreEqual(748317.0, e.Solve());
