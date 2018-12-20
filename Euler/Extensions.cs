@@ -431,5 +431,17 @@ namespace Euler {
                 yield return current;
             }
         }
+
+        public static IEnumerable<long> Factors(this long x) {
+            for (long factor = 1; factor * factor <= x; factor++) {
+                if (x % factor == 0) {
+                    yield return factor;
+
+                    if (factor * factor != x) {
+                        yield return x / factor;
+                    }
+                }
+            }
+        }
     }
 }
