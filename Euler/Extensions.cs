@@ -443,5 +443,9 @@ namespace Euler {
                 }
             }
         }
+
+        public static string Sorted(this string str) {
+            return String.Concat(str.OrderBy(c => c));
+        }
     }
 }
