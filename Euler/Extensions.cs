@@ -447,5 +447,9 @@ namespace Euler {
         public static string Sorted(this string str) {
             return String.Concat(str.OrderBy(c => c));
         }
+
+        public static IEnumerable<(int, T)> Enumerate<T>(this IEnumerable<T> seq, int start) {
+            return seq.Select((item, index) => (index + start, item));
+        }
     }
 }
