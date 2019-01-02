@@ -279,6 +279,22 @@ namespace Euler {
 
         #endregion
 
+        #region IsPalindrome
+
+        public static bool IsPalindrome(this int i) {
+            return IsPalindrome((long)i);
+        }
+
+        public static bool IsPalindrome(this long l) {
+            return l.ToString().SequenceEqual(l.ToString().Reverse());
+        }
+
+        public static bool IsPalindrome(this BigInteger bi) {
+            return bi.ToString().SequenceEqual(bi.ToString().Reverse());
+        }
+
+        #endregion
+
         public static bool In<T>(this T t, ISet<T> set) {
             return set.Contains(t);
         }
