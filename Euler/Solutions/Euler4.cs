@@ -34,13 +34,8 @@ Project Euler Problem 4:
         public double Solve() {
             return 100.To(999)
                     .SelectMany(x => 100.To(999).Select(y => x * y))
-                    .Where(IsPalindrome)
+                    .Where(x => x.IsPalindrome())
                     .Max();
         }
-
-        private bool IsPalindrome(int i) {
-            return i.ToString().SequenceEqual(i.ToString().Reverse());
-        }
-
     }
 }
