@@ -134,6 +134,10 @@ namespace Euler {
             return Int64.Parse(sb.ToString());
         }
 
+        public static long ToLong(this double d) {
+            return (long)d;
+        }
+
         #endregion
 
         #region ToBigInteger
