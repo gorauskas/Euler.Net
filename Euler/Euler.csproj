@@ -28,11 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Artifacts\cipher.txt" />
     <None Remove="Artifacts\poker.txt" />
     <None Remove="Artifacts\words.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Artifacts\cipher.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Artifacts\names.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
