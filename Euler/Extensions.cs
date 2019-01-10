@@ -299,6 +299,18 @@ namespace Euler {
 
         #endregion
 
+        #region Product
+
+        public static int Product(this IEnumerable<int> nums) {
+            return nums.Aggregate(1, (accum, x) => accum * x);
+        }
+
+        public static long Product(this IEnumerable<long> nums) {
+            return nums.Aggregate((long)1, (accum, x) => accum * x);
+        }
+
+        #endregion
+
         public static bool In<T>(this T t, ISet<T> set) {
             return set.Contains(t);
         }
@@ -324,14 +336,6 @@ namespace Euler {
             foreach (var item in seq) {
                 action(item);
             }
-        }
-
-        public static int Product(this IEnumerable<int> nums) {
-            return nums.Aggregate(1, (accum, x) => accum * x);
-        }
-
-        public static long Product(this IEnumerable<long> nums) {
-            return nums.Aggregate((long)1, (accum, x) => accum * x);
         }
 
         public static int NumberOfDivisors(this int i) {
@@ -470,6 +474,22 @@ namespace Euler {
 
         public static IEnumerable<(int, T)> Enumerate<T>(this IEnumerable<T> seq, int start) {
             return seq.Select((item, index) => (index + start, item));
+        }
+
+        /// <summary>
+        /// Concatenate 2 integers
+        /// </summary>
+        /// <param name="a">int a</param>
+        /// <param name="b">int b to concatenate to a</param>
+        /// <returns>int</returns>
+        public static int Concat(this int a, int b) {
+            int c = b;
+            while (c > 0) {
+                a *= 10;
+                c /= 10;
+            }
+
+            return a + b;
         }
     }
 }
