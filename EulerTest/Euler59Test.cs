@@ -10,7 +10,7 @@ namespace Euler.Tests {
         public void TestSolve059() {
 
             Euler59 e = new Euler59();
-            Assert.AreEqual(107359.0, e.Solve());
+            Assert.AreEqual(129448.0, e.Solve());
 
         }
 
