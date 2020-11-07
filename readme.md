@@ -1,6 +1,6 @@
 # Euler.Net
 
-[![Build Status](https://travis-ci.org/gorauskas/Euler.Net.svg?branch=master)](https://travis-ci.org/gorauskas/Euler.Net)
+[![Build Euler.Net](https://github.com/gorauskas/Euler.Net/workflows/Build%20Euler.Net/badge.svg?branch=master)](https://github.com/gorauskas/Euler.Net/actions)
 
 Solutions to the Project Euler problems written in C#.
 
