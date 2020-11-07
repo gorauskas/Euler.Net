@@ -1,7 +1,0 @@
-language: csharp
-solution: Euler.Net.sln
-mono: none
-dotnet: 2.1
-script:
- - dotnet restore
- - dotnet test -v m
