@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Euler.Sequences;
 
 namespace Euler.Solutions {
 
@@ -25,12 +27,25 @@ Project Euler Problem 5:
                     .FormatWith(this.Solve());
             }
         }
-
-        // TODO: This is pretty slow
+        
+        /**
+         * Using prime factorisation
+         * Let pi be the i’th prime, then N can be expressed as N = p1^a1 * p2^a2 * p3^a3…
+         * We start by putting ai = 0 for all i. We can iterate over all the divisors, such that divisor j=1,2,…,20 can
+         * be factorised as Nj = p1^b1 * p2^b2 * p3^b3… and then ai = max(ai, bi). For p1 = 2, we have that 2^4=16 and
+         * 2^5 = 32. Therefore a1 = 4. In more general terms we can express ai = floor(log k/ log pi).
+         * this version runs in about 1/2 second.
+         */
         public double Solve() {
-            return 1.ToMax()
-                .Where(x => x.IsEven())
-                .First(x => x.IsMultipleOf(11.To(20).ToArray()));
+            var max = 20;
+            var p = new IntPrimeSequence().TakeWhile(x => x < max);
+            
+            return 0.To(p.Count() - 1).ToList()
+                .Aggregate( //reduce
+                    1, 
+                    (acc, i) => acc *= ((int) Math.Pow(p.ElementAt(i), (int) Math.Floor(Math.Log(max) / Math.Log(p.ElementAt(i))))),
+                    x => x
+                );
         }
     }
 }
