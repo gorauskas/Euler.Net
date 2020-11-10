@@ -43,8 +43,7 @@ Project Euler Problem 5:
             return 0.To(p.Count() - 1).ToList()
                 .Aggregate( //reduce
                     1, 
-                    (acc, i) => acc *= ((int) Math.Pow(p.ElementAt(i), (int) Math.Floor(Math.Log(max) / Math.Log(p.ElementAt(i))))),
-                    x => x
+                    (acc, i) => acc *= ((int) Math.Pow(p.ElementAt(i), (int) Math.Floor(Math.Log(max) / Math.Log(p.ElementAt(i)))))
                 );
         }
     }
